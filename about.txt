@@ -1,0 +1,5 @@
+Theme name:    Sobrio
+Description:   A lightweight pretty sober theme for Anchor CMS.
+Author name:   Vinicius Ribeiro
+Author site:   http://vlribeiro.com.br
+License:       http://licence.visualidiot.com
