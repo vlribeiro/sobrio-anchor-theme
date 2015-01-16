@@ -4,6 +4,7 @@
 
 	<h2>
 		<?php echo page_title(); ?>
+		<?php echo category_title(); ?>
 	</h2>
 
 	<?php if(has_posts()): ?>

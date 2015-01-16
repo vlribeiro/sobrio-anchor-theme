@@ -45,9 +45,15 @@ if(!function_exists('relative_time')){
 	}
 }
 
+if(!function_exists('word_count')){
+	function word_count($content) {
+		return str_word_count(strip_tags($content));
+	}
+}
+
 if(!function_exists('estimated_reading_time')){
 	function estimated_reading_time($content) {
-		$word_count = str_word_count(strip_tags($content));
+		$word_count = word_count($content);
 		$avg_wpm = 175;
 
 		$m = floor($word_count / $avg_wpm);
@@ -59,5 +65,17 @@ if(!function_exists('estimated_reading_time')){
 		elseif ($s <= 59) {
 			return $s . ' ' . pluralise($s, 'segundo');
 		}
+	}
+}
+
+if(!function_exists('twitter_account')){
+	function twitter_account() {
+		return site_meta('twitter', 'vlribeiro');
+	}
+}
+
+if(!function_exists('twitter_url')){
+	function twitter_url() {
+		return 'https://twitter.com/' . twitter_account();
 	}
 }
