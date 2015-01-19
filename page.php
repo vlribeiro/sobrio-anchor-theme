@@ -1,14 +1,16 @@
 <?php theme_include('header'); ?>
 
-<main class="container">
+<main class="content">
 	<article>
-		<header>
+		<div class="page-header">
 			<h1>
 				<?php echo page_title(); ?>
 			</h1>
-		</header>
+		</div>
 
-		<?php echo page_content(); ?>
+		<article class="article-content">
+			<?php echo page_content(); ?>
+		</article>
 	</article>
 </main>
 

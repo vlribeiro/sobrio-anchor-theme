@@ -25,5 +25,9 @@
 				</li>
 			</ul>
 		</footer>
+
+		<script type="text/javascript">
+			ba.init();
+		</script>
     </body>
 </html>

@@ -25,6 +25,7 @@ body {
 
 .search-form.active {
 	display: table;
+	z-index: 2000;
 }
 
 .search-form .close-button {
@@ -82,6 +83,13 @@ body {
 header {	
 	padding: 1em;
 	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: rgba(255, 255, 255, .8);
+	z-index: 1000;
 }
 
 #logo {
@@ -90,6 +98,9 @@ header {
 	color: rgba(31, 218, 154, 1);
 	font-weight: 700;
 	text-transform: lowercase;
+	display: block;
+	float: left;
+	width: 90%;
 }
 
 header button {
@@ -99,6 +110,28 @@ header button {
 	color: rgba(31, 218, 154, 1);
 	font-size: 1.5em;
 	padding: 0;
+	display: block;
+	width: 10%;
+	text-align: right;
+}
+
+header nav {
+	opacity: 1;
+	height: auto;
+	clear: both;
+
+	-ms-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+}
+
+header nav.nav-hidden {
+	opacity: 0;
+	height: 0;
+
+	-ms-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
 }
 
 header nav ul {
@@ -224,16 +257,28 @@ header nav ul li a {
  *
  */
 
-.article-header-noimage {
- 	padding: .5em 0em;
- 	background-color: rgba(31, 218, 154, 1);
+.article-header, .page-header {
+	background-color: rgba(31, 218, 154, 1);
  	color: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: relative;
 }
 
-.article-header-noimage h1 {
-	font-size: 1.5em;
+.article-header h1, .page-header h1 {
+	font-size: 1.8em;
 	text-align: center;
+	text-shadow: .1em .1em rgba(0,0,0,.4);
 	padding: 1em;
+}
+
+.article-header div {
+	padding: 1em 0em;
+}
+
+.article-header.featured-image h1, .article-header.featured-image div {
+	background-color: rgba(0, 0, 0, .3);
 }
 
 .article-meta {
@@ -260,6 +305,10 @@ header nav ul li a {
 
 .article-content p, .article-content ul, .article-content ol, .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
 	padding: .5em 0em;
+}
+
+.article-content p {
+	text-align: justify;
 }
 
 .article-content li {
@@ -310,4 +359,84 @@ header nav ul li a {
 .article-content ol {
 	list-style: decimal;
 	margin-left: 1em;
+}
+
+/**
+ *
+ *	Comments
+ *
+ */
+
+.comments-section-title {
+	color: rgba(219, 51, 64, 1);
+	text-align: center;
+	font-size: 1.2em;
+	padding: 1em;
+	display: block;
+}
+
+.commentform p {
+	padding: .5em 1em;
+	overflow: hidden;
+}
+
+.commentform p label {
+	color: rgba(219, 51, 64, 1);
+	display: block;
+}
+
+.commentform p input, .commentform p textarea {
+	display: block;
+	width: 100%;
+	outline: none;
+	border: 0.1em solid rgba(31, 218, 154, 1);
+	box-sizing: border-box;
+	padding: .4em;
+	font-size: .8em;
+	color: #666;
+}
+
+.commentform p textarea {
+	min-height: 5em;
+	font-family:'Lato', sans-serif;
+}
+
+.submit button {
+	background-color: rgba(40, 171, 227, 1);
+	border: none;
+	display: block;
+	width: 100%;
+	margin-top: 1em;
+	color: #fff;
+	font-size: 1em;
+	padding: .2em;
+	cursor: pointer;
+}
+
+.commentlist {
+	padding: 1em;
+}
+
+.comment {
+	border-bottom: 0.2em solid rgba(31, 218, 154, 1);
+}
+
+.comment h2 {
+	padding-top: 1em;
+	font-size: 1.2em;
+	color: #666;
+}
+
+.comment h2 img {
+	border-radius: 10em;
+	border: 0.1em solid rgba(31, 218, 154, 1);
+	margin-right: 1em;
+}
+
+.comment time {
+	float: right;
+}
+
+.comment-content {
+	padding: 1em;
 }

@@ -13,6 +13,7 @@
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
 		<link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
 
+		<script src="<?php echo theme_url('/js/vendor/zepto.min.js'); ?>"></script>
 		<script>var base = '<?php echo theme_url(); ?>';</script>
 		<script src="<?php echo theme_url('/js/main.js'); ?>"></script>
 

@@ -2,11 +2,7 @@
 
 	<section class="content" id="article-<?php echo article_id(); ?>">
 
-		<?php if (article_custom_field('featured-image')) : ?>
-		<div class="article-header" style="background-image:url('<?php echo article_custom_field('featured-image'); ?>');">
-		<?php else : ?>
-		<div class="article-header-noimage">
-		<?php endif ?>
+		<div <?php if (article_custom_field('featured-image')) : ?> class="article-header featured-image" style="background-image:url('<?php echo article_custom_field('featured-image'); ?>');" <?php else: ?> class="article-header" <?php endif ?> >		
 
 			<h1>
 				<?php echo article_title(); ?>
@@ -60,6 +56,10 @@
 	<?php if(comments_open()): ?>
 		<section class="comments">
 
+			<span class="comments-section-title">
+				Comentários
+			</span>
+
 			<form id="comment" class="commentform" method="post" action="<?php echo comment_form_url(); ?>#comment">
 				<?php echo comment_form_notifications(); ?>
 
@@ -89,6 +89,7 @@
 						<li class="comment" id="comment-<?php echo comment_id(); ?>">
 							<div>
 								<h2>
+									<img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim(comment_email()))) . "?d=" . urlencode("teste.jpg") . "&s=60"; ?>" />
 									<?php echo comment_name(); ?>
 								</h2>
 
@@ -96,7 +97,7 @@
 									<?php echo relative_time(comment_time()); ?>
 								</time>
 
-								<div class="content">
+								<div class="comment-content">
 									<?php echo comment_text(); ?>
 								</div>
 							</div>
