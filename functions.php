@@ -1,6 +1,6 @@
 <?php
 
-require("vendor/inflector.php");
+require("vendor/Inflector.php");
 
 if(!function_exists('relative_time')){
 	function pluralise($amount, $str) {

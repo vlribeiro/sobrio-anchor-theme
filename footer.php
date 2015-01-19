@@ -1,4 +1,4 @@
-		<footer>
+		<footer class="footer">
 			<small>
 				<?php echo date('Y'); ?> - <?php echo site_name(); ?>.
 			</small>

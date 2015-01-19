@@ -7,6 +7,7 @@
 
 		<!-- Assets -->
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="<?php echo theme_url('css/reset.css'); ?>">
 		<link rel="stylesheet" href="<?php echo theme_url('css/style.css'); ?>">
 
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
@@ -38,6 +39,10 @@
 	</head>
 	<body class="<?php echo body_class(); ?>">
 		<div class="search-form" role="dialog" aria-labelledby="search-legend">
+			<button class="close-button">
+				x
+			</button>
+
 			<form id="search" action="<?php echo search_url(); ?>" method="post">
 				<fieldset>
 					<legend id="search-legend">
@@ -45,12 +50,22 @@
 					</legend>
 
 					<input type="search" id="term" name="term" placeholder="Digite o termo e aperte enter..." value="<?php echo search_term(); ?>" tabindex="1">
+					
+					<button class="search-button" type="submit">
+						Pesquisar
+					</button>
 				</fieldset>
 			</form>
 		</div>
 
 		<header>
-			<a id="logo" href="<?php echo base_url(); ?>" title="<?php site_description(); ?>"><?php echo site_name(); ?></a>
+			<a id="logo" href="<?php echo base_url(); ?>" title="<?php site_description(); ?>">
+				<?php echo site_name(); ?>
+			</a>
+
+			<button>
+				<i class="fa fa-search"></i>
+			</button>
 
 			<?php if(has_menu_items()): ?>
 				<nav role="navigation">

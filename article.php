@@ -5,7 +5,7 @@
 		<?php if (article_custom_field('featured-image')) : ?>
 		<div class="article-header" style="background-image:url('<?php echo article_custom_field('featured-image'); ?>');">
 		<?php else : ?>
-		<div>
+		<div class="article-header-noimage">
 		<?php endif ?>
 
 			<h1>
@@ -33,24 +33,27 @@
 
 		</div>
 
-		<article>
+		<article class="article-content">
 			<?php echo article_markdown(); ?>
 		</article>
 
-		<nav class="pagination container clearfix">
+		<nav class="pagination">
 			<?php if (article_next_url()): ?>
-				<a class="article-next" href="<?php echo article_next_url() ?>">
-					<i class="fa fa-chevron-circle-left"></i>
-					mais recente
-				</a>
-			<?php endif ?>
-
+				<div class="newer">
+					<a class="article-next" href="<?php echo article_next_url() ?>">
+						<i class="fa fa-chevron-circle-left"></i>
+						mais recente
+					</a>
+				</div>
+			<?php endif; ?>
 			<?php if (article_previous_url()): ?>
-				<a class="article-previous" href="<?php echo article_previous_url() ?>">
-					mais antigo
-					<i class="fa fa-chevron-circle-right"></i>
-				</a>
-			<?php endif ?>
+				<div class="older">
+					<a class="article-previous" href="<?php echo article_previous_url() ?>">
+						mais antigo
+						<i class="fa fa-chevron-circle-right"></i>
+					</a>
+				</div>
+			<?php endif; ?>
 		</nav>
 	</section>
 
