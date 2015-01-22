@@ -2,35 +2,39 @@
 
 	<section class="content" id="article-<?php echo article_id(); ?>">
 
-		<div <?php if (article_custom_field('featured-image')) : ?> class="article-header featured-image" style="background-image:url('<?php echo article_custom_field('featured-image'); ?>');" <?php else: ?> class="article-header" <?php endif ?> >		
+		<article>
+			<header <?php if (article_custom_field('featured-image')) : ?> class="article-header featured-image" <?php else: ?> class="article-header" <?php endif ?> >
+				<h1>
+					<?php echo article_title(); ?>
+				</h1>
 
-			<h1>
-				<?php echo article_title(); ?>
-			</h1>
+				<div>
+					<time class="article-meta" datetime="<?php echo date(DATE_W3C, article_time()); ?>">
+						<i class="fa fa-calendar"></i>
+						há <?php echo relative_time(article_time()); ?>
+					</time>
+					<span class="article-meta">
+						<i class="fa fa-user"></i>
+						por <?php echo article_author('real_name'); ?>
+					</span>
+					<span class="article-meta">
+						<i class="fa fa-folder-o"></i>
+						em <a href="<?php echo article_category_url(); ?>"><?php echo article_category(); ?></a>
+					</span>
+					<span class="article-meta">
+						<i class="fa fa-clock-o"></i>
+						tempo de leitura: <?php echo estimated_reading_time(article_markdown()); ?>
+					</span>
+				</div>
 
-			<div>
-				<time class="article-meta" datetime="<?php echo date(DATE_W3C, article_time()); ?>">
-					<i class="fa fa-calendar"></i>
-					há <?php echo relative_time(article_time()); ?>
-				</time>
-				<span class="article-meta">
-					<i class="fa fa-user"></i>
-					por <?php echo article_author('real_name'); ?>
-				</span>
-				<span class="article-meta">
-					<i class="fa fa-folder-o"></i>
-					em <a href="<?php echo article_category_url(); ?>"><?php echo article_category(); ?></a>
-				</span>
-				<span class="article-meta">
-					<i class="fa fa-clock-o"></i>
-					tempo de leitura: <?php echo estimated_reading_time(article_markdown()); ?>
-				</span>
-			</div>
+				<?php if (article_custom_field('featured-image')) : ?>
+					<img src="<?php echo article_custom_field('featured-image') ?>" class="header-featured-image">
+				<?php endif ?>
+			</header>
 
-		</div>
-
-		<article class="article-content">
-			<?php echo article_markdown(); ?>
+			<section class="article-content">
+				<?php echo article_markdown(); ?>
+			</section>
 		</article>
 
 		<nav class="pagination">

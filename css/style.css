@@ -80,7 +80,7 @@ body {
 	cursor: pointer;
 }
 
-header {	
+.main-header {	
 	padding: 1em;
 	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
 	position: fixed;
@@ -103,7 +103,7 @@ header {
 	width: 90%;
 }
 
-header button {
+.main-header button {
 	float: right;
 	background: none;
 	border: none;
@@ -115,7 +115,7 @@ header button {
 	text-align: right;
 }
 
-header nav {
+.main-header nav {
 	opacity: 1;
 	height: auto;
 	clear: both;
@@ -125,7 +125,7 @@ header nav {
     -webkit-transition: all 0.2s ease-in;
 }
 
-header nav.nav-hidden {
+.main-header nav.nav-hidden {
 	opacity: 0;
 	height: 0;
 
@@ -134,11 +134,11 @@ header nav.nav-hidden {
     -webkit-transition: all 0.2s ease-in;
 }
 
-header nav ul {
+.main-header nav ul {
 	overflow: hidden;
 }
 
-header nav ul li {
+.main-header nav ul li {
 	display: block;
 	float: left;
 	text-transform: lowercase;
@@ -147,11 +147,11 @@ header nav ul li {
 	margin: .5em .2em;
 }
 
-header nav ul li:first-child {
+.main-header nav ul li:first-child {
 	margin-left: 0em;
 }
 
-header nav ul li a {
+.main-header nav ul li a {
 	color: #fff;
 	text-decoration: none;
 }
@@ -264,6 +264,7 @@ header nav ul li a {
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	position: relative;
+	overflow: hidden;
 }
 
 .article-header h1, .page-header h1 {
@@ -275,6 +276,10 @@ header nav ul li a {
 
 .article-header div {
 	padding: 1em 0em;
+}
+
+.article-header.featured-image {
+	background-color: transparent !important;
 }
 
 .article-header.featured-image h1, .article-header.featured-image div {
@@ -294,6 +299,16 @@ header nav ul li a {
 .article-meta a {
 	color: #fff;
 	text-decoration: none;
+}
+
+.header-featured-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -10;
+	margin: auto;
 }
 
 .article-content {

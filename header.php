@@ -59,7 +59,7 @@
 			</form>
 		</div>
 
-		<header>
+		<header class="main-header">
 			<a id="logo" href="<?php echo base_url(); ?>" title="<?php site_description(); ?>">
 				<?php echo site_name(); ?>
 			</a>
