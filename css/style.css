@@ -174,11 +174,26 @@ body {
 
 #posts-list li a {
 	text-decoration: none;
+	display: block;
+	overflow: hidden;
+	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
+	position: relative;
+}
+
+.posts-list-image {
+	display: block;
+	float: left;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	overflow: hidden;
+	position: absolute;
 }
 
 #posts-list article {
-	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
 	padding: 1em;
+	background-color: rgba(255, 255, 255, .7);
 }
 
 #posts-list article h3 {
@@ -516,7 +531,7 @@ body {
 		font-size: 2em;
 	}
 
-	#posts-list article {
+	#posts-list li a {
 		border-bottom: .1em solid rgba(31, 218, 154, 1);
 	}
 

@@ -12,6 +12,12 @@
 			<?php while(posts()): ?>
 				<li>
 					<a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>">
+						<?php if (article_custom_field('featured-image')) : ?>
+							<div class="posts-list-image">
+								<img src="<?php echo article_custom_field('featured-image') ?>" class="header-featured-image">
+							</div>
+						<?php endif ?>
+
 						<article>
 							<h3>
 								<?php echo article_title(); ?>
