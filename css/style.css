@@ -409,6 +409,11 @@ body {
  *
  */
 
+.comments {
+	max-width: 50em;
+	margin: auto;
+}
+
 .comments-section-title {
 	color: rgba(219, 51, 64, 1);
 	text-align: center;
