@@ -113,6 +113,7 @@ body {
 	display: block;
 	width: 10%;
 	text-align: right;
+	outline: none;
 }
 
 .main-header nav {
@@ -145,6 +146,7 @@ body {
 	padding: .2em .3em;
 	background-color: rgba(31, 218, 154, 1);
 	margin: .5em .2em;
+	border-radius: .2em;
 }
 
 .main-header nav ul li:first-child {
@@ -162,13 +164,13 @@ body {
  *
  */
 
- .section-content {
- 	text-align: center;
- 	padding: .5em 0em;
- 	font-size: 1.5em;
- 	background-color: rgba(31, 218, 154, 1);
- 	color: #fff;
- }
+.section-content {
+	text-align: center;
+	padding: .5em 0;
+	font-size: 1.5em;
+	background-color: rgba(31, 218, 154, 1);
+	color: #fff;
+}
 
 #posts-list li a {
 	text-decoration: none;
@@ -196,7 +198,7 @@ body {
 
 #posts-list article footer>* {
 	display: block;
-	padding: .25em 0em;
+	padding: .25em 0;
 }
 
 .pagination {
@@ -238,12 +240,12 @@ body {
 }
 
 .footer ul {
-	padding: 1em 0em;
+	padding: 1em 0;
 }
 
 .footer ul li {
 	display: block;
-	padding: .2em 0em;
+	padding: .2em 0;
 }
 
 .footer ul a {
@@ -268,21 +270,29 @@ body {
 }
 
 .article-header h1, .page-header h1 {
-	font-size: 1.8em;
+	font-size: 1.6em;
 	text-align: center;
-	text-shadow: .1em .1em rgba(0,0,0,.4);
+	text-shadow: .1em .1em .2em rgba(0,0,0,.4);
 	padding: 1em;
 }
 
+.article-description {
+	padding: 0 1em .5em 1em;
+	text-align: center;
+	font-size: 1.2em;
+	text-shadow: .1em .1em .2em rgba(0,0,0,.4);
+}
+
 .article-header div {
-	padding: 1em 0em;
+	padding: 1em 0;
+	text-shadow: .1em .1em .2em rgba(0,0,0,.4);
 }
 
 .article-header.featured-image {
 	background-color: transparent !important;
 }
 
-.article-header.featured-image h1, .article-header.featured-image div {
+.article-header.featured-image h1, .article-header.featured-image div, .article-header.featured-image .article-description {
 	background-color: rgba(0, 0, 0, .3);
 }
 
@@ -315,11 +325,13 @@ body {
 	padding: 1em;
 	color: #666;
 	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
+	max-width: 50em;
+	margin: auto;
 	font-size: 1.2em;
 }
 
 .article-content p, .article-content ul, .article-content ol, .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
-	padding: .5em 0em;
+	padding: .5em 0;
 }
 
 .article-content p {
@@ -327,7 +339,7 @@ body {
 }
 
 .article-content li {
-	padding: .2em 0em;
+	padding: .2em 0;
 }
 
 .article-content img {
@@ -452,6 +464,160 @@ body {
 	float: right;
 }
 
-.comment-content {
-	padding: 1em;
+.comment-content p {
+	padding: 1em 0;
+}
+
+@media screen and (min-width: 35em) {
+	.search-form .close-button {
+		font-size: 1.4em;
+		padding: .9em;
+		border: 0.1em solid #fff;
+	}
+
+	.search-form fieldset {
+		border: 0.1em solid #fff;
+		width: 80%;
+		font-size: 1.8em;
+		padding: 1em;
+	}
+
+	.search-form input {
+		font-size: .8em;
+		border: 0.1em solid #fff;
+	}
+
+	.search-form .search-button {
+		margin-top: 1.2em;
+		font-size: .8em;
+		padding: .4em;
+	}
+
+	.main-header {
+		border-bottom: 0.1em solid rgba(31, 218, 154, 1);
+	}
+
+	#logo {
+		font-size: 3em;
+	}
+
+	.main-header button {
+		font-size: 2em;
+	}
+
+	.main-header nav ul li {
+		padding: .4em .6em;
+		margin: .4em .4em;
+		font-size: 1.2em;
+	}
+
+	.section-content {
+		padding: .5em 0;
+		font-size: 2em;
+	}
+
+	#posts-list article {
+		border-bottom: .1em solid rgba(31, 218, 154, 1);
+	}
+
+	#posts-list article h3 {
+	 	font-size: 2em;
+	}
+
+	#posts-list article .description {
+	  	font-size: 1.4em;
+	}
+
+	#posts-list article footer {
+		font-size: 1em;
+	}
+
+	#posts-list article footer>* {
+		padding: .4em 0;
+	}
+
+	.pagination {
+		max-width: 50em;
+		margin: auto;
+	}
+
+	.pagination, .pagination a {
+		font-size: 1.4em;
+	}
+
+	.footer {
+		font-size: 1.2em;
+	}
+
+	.article-header h1, .page-header h1 {
+		font-size: 2.2em;
+		padding: 1em;
+	}
+
+	.article-description {
+		font-size: 1.4em;
+		padding: 0 2em 4em 2em;
+	}
+
+	.article-header div {
+		overflow: hidden;
+	}
+
+	.article-meta {
+		display: block;
+		float: left;
+		font-size: 1em;
+		padding: .5em 1em;
+		width: 50%;
+		box-sizing: border-box;
+	}
+
+	.article-content {
+		border-bottom: 0.1em solid rgba(31, 218, 154, 1);
+		font-size: 1.4em;
+	}
+
+	.article-content blockquote {
+		font-size: 1em;
+	}
+
+	.commentform p label {
+		font-size: 1.2em;
+		padding: .4em 0;
+	}
+
+	.commentform p input, .commentform p textarea {
+		padding: .6em;
+		font-size: 1em;
+	}
+
+	.submit button {
+		font-size: 1.2em;
+		padding: .4em;
+	}
+
+	.comment h2 {
+		font-size: 1.6em;
+	}
+
+	.comment-content {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (min-width: 60em) {
+	.article-header h1 {
+		font-size: 4em;
+		font-weight: bold;
+	}
+
+	.article-description {
+		font-size: 1.8em;
+		padding: 0 4em 4em 4em;
+	}
+
+	.article-meta {
+		width: 100%;
+		font-size: 1.2em;
+	}
 }

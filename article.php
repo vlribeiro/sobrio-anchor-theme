@@ -8,6 +8,10 @@
 					<?php echo article_title(); ?>
 				</h1>
 
+				<section class="article-description">
+					<?php echo article_description(); ?>
+				</section>
+
 				<div>
 					<time class="article-meta" datetime="<?php echo date(DATE_W3C, article_time()); ?>">
 						<i class="fa fa-calendar"></i>
@@ -102,7 +106,7 @@
 								</time>
 
 								<div class="comment-content">
-									<?php echo comment_text(); ?>
+									<?php echo strip_empty_paragraphs(nl2p(comment_text(), false)); ?>
 								</div>
 							</div>
 						</li>
