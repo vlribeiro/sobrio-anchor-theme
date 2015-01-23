@@ -10,13 +10,13 @@
 
 		<ul id="posts-list">
 			<?php while(posts()): ?>
-				<li>
+				<li <?php echo article_custom_field('featured-image') ? 'class="has-featured-image"' : '' ?>>
 					<a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>">
-						<?php if (article_custom_field('featured-image')) : ?>
-							<div class="posts-list-image">
+						<div class="posts-list-image">
+							<?php if (article_custom_field('featured-image')) : ?>
 								<img src="<?php echo article_custom_field('featured-image') ?>" class="header-featured-image">
-							</div>
-						<?php endif ?>
+							<?php endif ?>
+						</div>
 
 						<article>
 							<h3>
