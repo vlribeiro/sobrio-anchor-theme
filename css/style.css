@@ -152,7 +152,7 @@ body {
 }
 
 .main-header nav ul li:first-child {
-	margin-left: 0em;
+	margin-left: 0;
 }
 
 .main-header nav ul li a {
@@ -230,7 +230,7 @@ body {
 
 #posts-list li article .description {
   	color: #666;
-  	padding: 1em 0em;
+  	padding: 1em 0;
 }
 
 #posts-list li.has-featured-image article .description {
