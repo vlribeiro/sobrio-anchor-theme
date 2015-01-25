@@ -63,57 +63,72 @@
 
 	<?php if(comments_open()): ?>
 		<section class="comments">
+			<?php if (site_meta('disqus_shortname')) : ?>
+			    <div id="disqus_thread"></div>
 
-			<span class="comments-section-title">
-				Comentários
-			</span>
+				<script type="text/javascript">
+					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+					var disqus_shortname = '<?php echo site_meta('disqus_shortname'); ?>';
 
-			<form id="comment" class="commentform" method="post" action="<?php echo comment_form_url(); ?>#comment">
-				<?php echo comment_form_notifications(); ?>
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<?php else : ?>
+				<span class="comments-section-title">
+					Comentários
+				</span>
 
-				<p class="name">
-					<label for="name">Nome:</label>
-					<?php echo comment_form_input_name('placeholder="Seu nome"'); ?>
-				</p>
+				<form id="comment" class="commentform" method="post" action="<?php echo comment_form_url(); ?>#comment">
+					<?php echo comment_form_notifications(); ?>
 
-				<p class="email">
-					<label for="email">E-mail:</label>
-					<?php echo comment_form_input_email('placeholder="Seu e-mail (não será publicado)"'); ?>
-				</p>
+					<p class="name">
+						<label for="name">Nome:</label>
+						<?php echo comment_form_input_name('placeholder="Seu nome"'); ?>
+					</p>
 
-				<p class="textarea">
-					<label for="text">Comentário:</label>
-					<?php echo comment_form_input_text('placeholder="Seu comentário"'); ?>
-				</p>
+					<p class="email">
+						<label for="email">E-mail:</label>
+						<?php echo comment_form_input_email('placeholder="Seu e-mail (não será publicado)"'); ?>
+					</p>
 
-				<p class="submit">
-					<?php echo comment_form_button('Comentar'); ?>
-				</p>
-			</form>
+					<p class="textarea">
+						<label for="text">Comentário:</label>
+						<?php echo comment_form_input_text('placeholder="Seu comentário"'); ?>
+					</p>
 
-			<?php if(has_comments()): ?>
-				<ul class="commentlist">
-					<?php $i = 0; while(comments()): $i++; ?>
-						<li class="comment" id="comment-<?php echo comment_id(); ?>">
-							<div>
-								<h2>
-									<img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim(comment_email()))) . "?d=" . urlencode("teste.jpg") . "&s=60"; ?>" />
-									<?php echo comment_name(); ?>
-								</h2>
+					<p class="submit">
+						<?php echo comment_form_button('Comentar'); ?>
+					</p>
+				</form>
 
-								<time>
-									<?php echo relative_time(comment_time()); ?>
-								</time>
+				<?php if(has_comments()): ?>
+					<ul class="commentlist">
+						<?php $i = 0; while(comments()): $i++; ?>
+							<li class="comment" id="comment-<?php echo comment_id(); ?>">
+								<div>
+									<h2>
+										<img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim(comment_email()))) . "?d=" . urlencode("teste.jpg") . "&s=60"; ?>" />
+										<?php echo comment_name(); ?>
+									</h2>
 
-								<div class="comment-content">
-									<?php echo strip_empty_paragraphs(nl2p(comment_text(), false)); ?>
+									<time>
+										<?php echo relative_time(comment_time()); ?>
+									</time>
+
+									<div class="comment-content">
+										<?php echo strip_empty_paragraphs(nl2p(comment_text(), false)); ?>
+									</div>
 								</div>
-							</div>
-						</li>
-					<?php endwhile; ?>
-				</ul>
+							</li>
+						<?php endwhile; ?>
+					</ul>
+				<?php endif; ?>
 			<?php endif; ?>
-
 		</section>
 	<?php endif; ?>
 
