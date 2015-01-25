@@ -23,12 +23,12 @@
 	    <meta name="generator" content="Anchor CMS">
 
 	    <!-- OG -->
-	    <meta property="og:title" content="<?php echo site_name(); ?>">
+	    <meta property="og:title" content="<?php echo page_title('Ops! Página não encontrada.'); ?> - <?php echo site_name(); ?>">
 	    <meta property="og:type" content="website">
-	    <meta property="og:url" content="<?php echo e(current_url()); ?>">
-	    <meta property="og:image" content="<?php echo article_custom_field('featured-image') ? '//' . $_SERVER['SERVER_NAME'] . article_custom_field('featured-image') : theme_url('img/og_image.gif'); ?>">
+	    <meta property="og:url" content="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . base_url() . e(current_url()); ?>">
+	    <meta property="og:image" content="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . (article_custom_field('featured-image') ? article_custom_field('featured-image') : theme_url('img/og_image.gif')); ?>">
 	    <meta property="og:site_name" content="<?php echo site_name(); ?>">
-	    <meta property="og:description" content="<?php echo site_description(); ?>">
+	    <meta property="og:description" content="<?php echo article_description() ? article_description() : site_description(); ?>">
 
 	    <?php if(customised()): ?>
 		    <!-- Custom CSS -->
