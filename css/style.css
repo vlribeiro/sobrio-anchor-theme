@@ -240,12 +240,12 @@ body {
 
 #posts-list li.has-featured-image article footer {
 	color: #fff;
-	font-size: .8em;
 	text-shadow: .1em .1em .2em rgba(0, 0, 0, .3);
 }
 
 #posts-list article footer {
 	color: #999;
+	font-size: .8em;
 }
 
 #posts-list article footer>* {
@@ -687,9 +687,38 @@ body {
 		box-sizing: border-box;
 	}
 
+	#posts-list li a {
+		min-height: 20em;
+	}
+
 	#posts-list li:nth-child(odd) {
 		border-right: .1em solid rgba(31, 218, 154, 1);
 		clear: both;
+	}
+
+	#posts-list li a article {
+		height: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 100%;
+		padding: 0;
+	}
+
+	#posts-list li a article h3 {
+		padding: 1em;
+	}
+
+	#posts-list li a article .description {
+		padding: 1em;
+	}
+
+	#posts-list li a article footer {
+		position: absolute;
+		width: 100%;
+		bottom: 1em;
 	}
 
 	.article-header h1 {
