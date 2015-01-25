@@ -69,6 +69,9 @@
 				<script type="text/javascript">
 					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 					var disqus_shortname = '<?php echo site_meta('disqus_shortname'); ?>';
+					var disqus_identifier = '<?php echo article_slug(); ?>';
+					var disqus_title = '<?php echo article_title(); ?>';
+					var disqus_url = '<?php echo "http://" . $_SERVER['SERVER_NAME'] . article_url(); ?>';
 
 					/* * * DON'T EDIT BELOW THIS LINE * * */
 					(function() {

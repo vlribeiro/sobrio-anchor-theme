@@ -6,6 +6,7 @@ A lightweight open Anchor CMS theme for my personal blog.
 ## Site:
 
 - **disqus_shortname**: Disqus shortname for displaying disqus comments on posts that allow commenting.
+- **analytics_id**: Google Analytics ID for tracking.
 - **twitter**: Twitter username to be displayer on footer
 
 ## For posts:
