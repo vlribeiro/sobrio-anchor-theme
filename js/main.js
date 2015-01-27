@@ -59,13 +59,17 @@
     for (var i in featuredImages) {
       var featuredImage = $(featuredImages[i]);
 
-      if (featuredImage.height() < featuredImage.parent().height()) {
-        featuredImage.addClass('wide-image');
+      featuredImage.on('load', function(e) {
+        var actualImage = $(e.srcElement);
+        
+        if (actualImage.height() < actualImage.parent().height()) {
+          actualImage.addClass('wide-image');
 
-        var negativeMargin = (featuredImage.width() - featuredImage.parent().width()) / 2;
+          var negativeMargin = (actualImage.width() - actualImage.parent().width()) / 2;
 
-        featuredImage.css('left', '-' + negativeMargin + 'px');
-      }
+          actualImage.css('left', '-' + negativeMargin + 'px');
+        }
+      })
     }
   }
 
