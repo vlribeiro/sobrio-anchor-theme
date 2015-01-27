@@ -373,6 +373,15 @@ body {
 	margin: auto;
 }
 
+.header-featured-image.wide-image {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: auto;
+}
+
 .article-content {
 	padding: 1em;
 	color: #666;
