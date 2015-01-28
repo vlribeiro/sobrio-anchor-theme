@@ -80,6 +80,18 @@ if(!function_exists('twitter_url')){
 	}
 }
 
+if(!function_exists('facebook_account')){
+	function facebook_account() {
+		return site_meta('facebook', 'vlribeiro');
+	}
+}
+
+if(!function_exists('facebook_url')){
+	function facebook_url() {
+		return 'https://facebook.com/' . facebook_account();
+	}
+}
+
 if (!function_exists('nl2p')) {
 	/**
 	 * Returns string with newline formatting converted into HTML paragraphs.

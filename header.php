@@ -38,6 +38,7 @@
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 				ga('create', '<?php echo site_meta('analytics_id') ?>', 'auto');
+				ga('require', 'displayfeatures');
 				ga('send', 'pageview');
 
 			</script>

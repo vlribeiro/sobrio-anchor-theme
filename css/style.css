@@ -1,9 +1,27 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
 
+html { height: 100%; }
+
 body {
+	position: relative;
 	margin: 0;
 	font-family:'Lato', sans-serif;
 	color: #666;
+	height: 100%;
+}
+
+/**
+ *
+ *	Helpér classes
+ *
+ */
+
+.figure-left {
+	float: left;
+	width: 30%;
+	margin-top: 1em;
+	margin-right: 1em;
+	margin-bottom: 1em;
 }
 
 /**
@@ -305,6 +323,23 @@ body {
 	text-decoration: none;
 }
 
+.anchor-footer {
+	color: #666;
+	font-size: .7em;
+	line-height: 5em;
+	display: block;
+	padding: 1em;
+}
+
+.anchor-footer img {
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+.anchor-footer a {
+	color: #666;
+}
+
 /**
  *
  *	Article
@@ -424,8 +459,11 @@ body {
 	font-size: .8em;
 }
 
-.article-content code {
+.article-content code, .article-content pre {
 	font-family: monospace;
+	padding: 1em;
+	border: .1em solid rgba(31, 218, 154, 1);
+	overflow-x: auto;
 }
 
 .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6, .article-content a {
