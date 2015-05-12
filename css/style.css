@@ -418,7 +418,7 @@ body {
 }
 
 .article-content {
-	padding: 2rem;
+	padding: 1rem;
 	color: #666;
 	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
 	max-width: 60rem;
@@ -505,7 +505,7 @@ body {
 
 .author-info {
 	overflow: hidden;
-	padding: 2rem;
+	padding: 1rem;
 	max-width: 60rem;
 	margin: auto;
 }
@@ -515,8 +515,8 @@ body {
 	border-radius: 100%;
 	display: block;
 	float: left;
-	margin-right: 2rem;
-	margin-bottom: 2rem;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
 }
 
 .author-info h2 {
