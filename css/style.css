@@ -272,7 +272,7 @@ body {
 }
 
 .pagination {
-	padding: 1em;
+	padding: 2rem;
 	overflow: hidden;
 }
 
@@ -418,10 +418,10 @@ body {
 }
 
 .article-content {
-	padding: 1em;
+	padding: 2rem;
 	color: #666;
 	border-bottom: 0.0625em solid rgba(31, 218, 154, 1);
-	max-width: 50em;
+	max-width: 60rem;
 	margin: auto;
 	font-size: 1.2em;
 }
@@ -496,6 +496,38 @@ body {
 	margin-left: 1em;
 }
 
+
+/**
+ *
+ *	Author
+ *
+ */
+
+.author-info {
+	overflow: hidden;
+	padding: 2rem;
+	max-width: 60rem;
+	margin: auto;
+}
+
+.author-info img {
+	width: 25%;
+	border-radius: 100%;
+	display: block;
+	float: left;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+}
+
+.author-info h2 {
+	font-size: 1.2em;
+}
+
+.author-info p {
+	padding-top: 1rem;
+}
+
+
 /**
  *
  *	Comments
@@ -503,7 +535,7 @@ body {
  */
 
 .comments {
-	max-width: 50em;
+	max-width: 60rem;
 	margin: auto;
 }
 
@@ -650,7 +682,7 @@ body {
 	}
 
 	.pagination {
-		max-width: 50em;
+		max-width: 60rem;
 		margin: auto;
 	}
 
@@ -707,6 +739,15 @@ body {
 	.submit button {
 		font-size: 1.2em;
 		padding: .4em;
+	}
+
+	.author-info h2 {
+		font-size: 2em;
+	}
+
+	.author-info p {
+		font-size: 1.6em;
+		line-height: 1.4em;
 	}
 
 	.comment h2 {

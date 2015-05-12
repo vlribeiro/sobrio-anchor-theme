@@ -39,6 +39,12 @@
 			<section class="article-content">
 				<?php echo article_markdown(); ?>
 			</section>
+
+			<div class="author-info">
+				<img src="<?php echo theme_url('img/author_' . article_author_id() . '.jpg'); ?>" alt="Foto de <?php echo article_author(); ?>">
+				<h2><?php echo article_author(); ?></h2>
+				<p><?php echo article_author_bio(); ?></p>
+			</div>
 		</article>
 
 		<nav class="pagination">
